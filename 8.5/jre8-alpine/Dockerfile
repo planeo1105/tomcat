@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM registry.cn-hangzhou.aliyuncs.com/automated_build/openjdk:8-alpine
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -131,5 +131,5 @@ RUN set -e \
 		exit 1; \
 	fi
 
-EXPOSE 8080
+EXPOSE 8080 8005 8009
 CMD ["catalina.sh", "run"]
